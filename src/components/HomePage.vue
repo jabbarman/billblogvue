@@ -1,14 +1,27 @@
 <template>
-  <h3>All posts</h3>
+    <div>
+        <span>Message : {{blog.message}}</span>
+        <div class="post" v-for="post in blog.posts" :key="post.id">
+            <ul>
+                <li>id : {{post.id}}</li>
+                <li>title : <a v-bind:href="post.links.href">{{post.title}}</a></li>
+                <li>creator : {{post.creator}}</li>
+            </ul>
+        </div>
+    </div>
 </template>
 
 <script>
+import blog from '../data/posts';
+
 export default {
-  name: 'HomePage',
-  props: {
-    msg: String
-  }
-}
+    name: 'HomePage',
+    data () {
+        return {
+            blog,
+        };
+    },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
