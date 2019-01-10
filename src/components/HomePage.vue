@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="blog">
         <span>Message : {{blog.message}}</span>
         <div class="post" v-for="post in blog.posts" :key="post.id">
             <ul>
@@ -12,14 +12,22 @@
 </template>
 
 <script>
-import blog from '../data/posts';
+//import blog from '../data/posts';
 
 export default {
     name: 'HomePage',
+    created() {
+      this.$store.dispatch('getAllPosts');
+    },
     data () {
         return {
-            blog,
+
         };
+    },
+    computed : {
+        blog() {
+            return this.$store.state.allPosts;
+        },
     },
 };
 </script>
