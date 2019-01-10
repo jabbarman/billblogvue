@@ -15,7 +15,7 @@ export default new Vuex.Store({
     },
     actions: {
         getAllPosts({ commit }) {
-            axios.get('/api/v1/blog')
+            axios.get('http://billblog.development-server.info/api/v1/blog')
                 .then(result => commit('updatePosts', result.data))
                 .catch(console.error)
         },
