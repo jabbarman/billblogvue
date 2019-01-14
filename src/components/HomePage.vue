@@ -19,11 +19,6 @@ export default {
     created() {
       this.$store.dispatch('getAllPosts');
     },
-    data () {
-        return {
-
-        };
-    },
     computed : {
         blog() {
             return this.$store.state.allPosts;
