@@ -3,25 +3,21 @@
     <header>
       <nav>
         <ul>
-            <li class="nav-item"><a href="#">View all posts</a></li>
-            <li class="nav-item"><a href="#">Add a post</a></li>
+            <li class="nav-item"><router-link to="/">View all posts</router-link></li>
+            <li class="nav-item"><router-link to="/add">Add a post</router-link></li>
         </ul>
       </nav>
     </header>
     <main>
-      <HomePage />
+      <router-view />
     </main>
   </div>
 </template>
 
 <script>
-import HomePage from './components/HomePage.vue'
 
 export default {
   name: 'app',
-  components: {
-    HomePage
-  }
 }
 </script>
 
